@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { UploadHelper, pipelineAsync } from '../helpers/upload-helper'
+import { UploadHelper } from '../helpers/upload-helper'
 
 export class UploadController {
   constructor (
@@ -9,16 +9,16 @@ export class UploadController {
   async handler(request: Request, response: Response) {
     const { headers } = request
 
-    const busboyInstance = this.uploadHelper.registerEvents(
+    const onFinish = () => {
+      response.writeHead(200, { 'Connection': 'close' })
+      response.end('Success')
+    }
+
+    const busboy = this.uploadHelper.upload(
       headers,
-      response.end()
+      onFinish
     )
 
-    await pipelineAsync(
-      request,
-      busboyInstance
-    )
-
-    console.log('Request finished with success!!');
+    return request.pipe(busboy)
   }
 }
