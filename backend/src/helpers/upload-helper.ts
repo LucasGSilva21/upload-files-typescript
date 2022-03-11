@@ -1,11 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
-import { promisify } from 'util'
-import { pipeline } from 'stream'
 import { ensureFileSync } from 'fs-extra'
 import busboyCons from 'busboy'
-
-export const pipelineAsync = promisify(pipeline)
 
 export class UploadHelper {
   upload(headers: any, onFinish: any) {
@@ -16,7 +12,7 @@ export class UploadHelper {
       ensureFileSync(saveTo)
       file.pipe(fs.createWriteStream(saveTo));
     });
- 
+
     busboy.on('finish', onFinish);
 
     return busboy
