@@ -4,12 +4,7 @@ import { ensureFileSync } from 'fs-extra'
 import { Stream } from 'stream'
 import { Response } from 'express'
 import busboyCons from 'busboy'
-
-interface FileDetail {
-  filename: string
-  encoding: string
-  mimeType: string
-}
+import { FileDetail } from '../interfaces/upload-interface'
 
 export class UploadHelper {
   makeOnFile() {
