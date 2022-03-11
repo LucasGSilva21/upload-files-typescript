@@ -1,8 +1,10 @@
 import express from 'express'
 import { UploadHelper } from './helpers/upload-helper'
 import { UploadController } from './controllers/upload-controller'
+import { LocalStorage } from './adapters/local-storage-adapter'
 
-const uploadHelper = new UploadHelper()
+const localStorage = new LocalStorage()
+const uploadHelper = new UploadHelper(localStorage)
 const uploadController = new UploadController(uploadHelper)
 
 const PORT = 3333

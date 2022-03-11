@@ -1,17 +1,16 @@
-import fs from 'fs'
-import { join } from 'path'
-import { ensureFileSync } from 'fs-extra'
 import { Stream } from 'stream'
 import { Response } from 'express'
 import busboyCons from 'busboy'
-import { FileDetail } from '../interfaces/upload-interface'
+import { FileDetail, Storage } from '../interfaces/upload-interface'
 
 export class UploadHelper {
+  constructor (
+    private readonly storage: Storage
+  ) {}
+
   makeOnFile() {
-    return function(fieldName: string, file: Stream, fileDetail: FileDetail, encoding, mimetype) {
-      const saveTo = join(__dirname, '../../downloads', `${Date.now()+fileDetail.filename}`)
-      ensureFileSync(saveTo)
-      file.pipe(fs.createWriteStream(saveTo));
+    return (fieldName: string, file: Stream, fileDetail: FileDetail, encoding, mimetype) => {
+      this.storage.save(fileDetail.filename, file)
     }
   }
 
