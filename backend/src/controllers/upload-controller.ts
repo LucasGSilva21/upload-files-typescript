@@ -9,13 +9,12 @@ export class UploadController {
   async handler(request: Request, response: Response) {
     const { headers } = request
 
-    const onFinish = () => {
-      response.writeHead(200, { 'Connection': 'close' })
-      response.end('Success')
-    }
+    const onFile = this.uploadHelper.makeOnFile()
+    const onFinish = this.uploadHelper.makeOnFinish(response)
 
     const busboy = this.uploadHelper.upload(
       headers,
+      onFile,
       onFinish
     )
 
