@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "ts-node-dev src/server.ts",
-    "generate:file": "ts-node scripts/generate-file.ts"
+    "generate:file": "node scripts/generate-file.js"
   },
   "repository": {
     "type": "git",
