@@ -64,25 +64,32 @@ export const FileUpload = () => {
           <p>Selecione um arquivo para ver os detalhes</p>
         )}
         <br/>
-        <Button
-          type="reset"
-          variant="contained"
-          color="default"
-          className={classes.button}
-          startIcon={<Clear />}
-          onClick={cleanFileSelect}
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
         >
-          Limpar
-        </Button>
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          startIcon={<CloudUpload />}
-        >
-          Enviar
-        </Button>
+          <Button
+            type="reset"
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            startIcon={<Clear />}
+            onClick={cleanFileSelect}
+          >
+            Limpar
+          </Button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<CloudUpload />}
+          >
+            Enviar
+          </Button>
+        </Grid>
       </Grid>
     </form>
   )
