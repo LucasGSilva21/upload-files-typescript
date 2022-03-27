@@ -6,12 +6,17 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles((theme) => ({
   upload: {
     height: '100vh',
+    backgroundColor: '#3a3b3c'
   },
   border: {
-    border: '5px solid black',
+    border: '1px solid black',
     borderRadius: '25px',
-    padding: '25px'
+    padding: '25px',
+    backgroundColor: '#f5f5f5'
   },
+  title: {
+    textAlign: 'center'
+  }
 }))
 
 export const App = () => {
@@ -26,7 +31,9 @@ export const App = () => {
       className={classes.upload}
     >
       <div className={classes.border}>
-        <h1>Upload de arquivos</h1>
+        <h1 className={classes.title}>
+          Upload de arquivos
+        </h1>
         <FileUpload/>
       </div>
     </Grid>
