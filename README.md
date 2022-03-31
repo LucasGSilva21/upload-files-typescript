@@ -36,11 +36,23 @@ $ npm i
 # Execute a aplicação em modo de desenvolvimento
 $ npm run start:dev
 
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+# O servidor iniciará na porta:3333 - acesse <http://localhost:3333>
 ```
 
 #### 🧭 Rodando a aplicação web (Frontend)
-Em construção...
+
+```bash
+# Vá para a pasta frontend
+$ cd frontend
+
+# Instale as dependências
+$ npm i
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
+
+# A aplicação iniciará na porta:3000 - acesse <http://localhost:3000>
+```
 
 ---
 
