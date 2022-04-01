@@ -8,7 +8,7 @@ Projeto utilizando streams do Node.JS para realizar uploads de arquivos
 
 Este projeto é divido em:
 1. Backend (pasta backend) 
-2. Frontend (pasta web - em construção...)
+2. Frontend (pasta frontend)
 
 💡O Frontend precisa que o Backend esteja sendo executado para funcionar.
 
@@ -18,7 +18,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e o [NPM](https://www.npmjs.com/).
 Além disto é bom ter um editor para trabalhar com o código como o [VSCode](https://code.visualstudio.com/).
 
-#### 🎲 Rodando o Backend (servidor)
+#### 🎲 Rodando o Backend
 
 ```bash
 # Clone este repositório
@@ -39,7 +39,7 @@ $ npm run start:dev
 # O servidor iniciará na porta:3333 - acesse <http://localhost:3333>
 ```
 
-#### 🧭 Rodando a aplicação web (Frontend)
+#### 🧭 Rodando a aplicação web
 
 ```bash
 # Vá para a pasta frontend
@@ -67,6 +67,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[Busboy](https://www.npmjs.com/package/busboy)**
 
 > Veja o arquivo  [package.json](https://github.com/LucasGSilva21/upload-files-typescript/blob/main/backend/package.json)
+
+#### **Frontend**
+
+-   **[ReactJS](https://reactjs.org/)**
+-   **[Material UI](https://mui.com/)**
+
+> Veja o arquivo  [package.json](https://github.com/LucasGSilva21/upload-files-typescript/blob/main/frontend/package.json)
 
 #### Utilitários
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**
